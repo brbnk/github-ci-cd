@@ -1,0 +1,14 @@
+name: Pull Request Workflow
+
+run-name: Pull-Request Validations
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validating Pull Request
+        run: echo "Validating Pull Request on main branch"

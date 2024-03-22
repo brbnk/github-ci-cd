@@ -1,0 +1,12 @@
+name: Pull Request Workflow
+
+run-name: Pull-Request Validations
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validation:
+    - name: Validating Pull Request
+      run: echo "Validating Pull Request on main branch"

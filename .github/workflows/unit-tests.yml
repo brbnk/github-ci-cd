@@ -1,0 +1,24 @@
+name: unit tests runner
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'Api'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+      
+      - name: Restore packages
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build
+
+      - name: Tests
+        run: dotnet test

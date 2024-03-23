@@ -11,7 +11,7 @@ public sealed class GreetingServiceTests
   }
 
   [Theory]
-  [InlineData("Hello, World!")]
+  [InlineData("Hello, World")]
   public void Greet_Should_Return_Text(string testGreeting)
   {
     var matched = testGreeting.Equals("Hello, World!");

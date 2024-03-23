@@ -1,0 +1,10 @@
+name: on pull request event
+
+on:
+  pull_request:
+    branches: [ 'develop' ]
+
+jobs:
+  call-unit-tests-workflow:
+    uses: ./.github/workflows/unit-tests.yml
+    

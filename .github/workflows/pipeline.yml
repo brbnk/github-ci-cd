@@ -1,4 +1,4 @@
-name: "Dummy pipeline"
+name: "[DEPRECATED] Study Workflow"
 
 run-name: ${{ github.actor }} is learning GitHub Actions
 

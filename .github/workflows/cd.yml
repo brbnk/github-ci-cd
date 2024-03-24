@@ -1,0 +1,20 @@
+name: deploymeny
+
+on:
+  push:
+    branches: [ develop, main ]
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: staging
+        if: github.ref == 'refs/heads/develop'
+        env:
+          deploy_url: ${{ secrets.RENDER_STAGING_DEPLOY_HOOK_URL  }}
+        run: |
+          curl "$deploy_url"
+
+      - name: production
+        if: github.ref == 'refs/heads/main'
+        run: echo 'production deployment'
